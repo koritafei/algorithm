@@ -1,0 +1,5 @@
+add_executable(getMinStck getMinStack.cc)
+add_executable(twostackqueue twostackqueue.cc)
+add_executable(reveseStack reveseStack.cc)
+add_executable(stacksort stacksort.cc)
+add_executable(slideWindows slideWindows.cc)
