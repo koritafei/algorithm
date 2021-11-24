@@ -55,4 +55,36 @@ public:
 
     return res;
   }
+
+  std::vector<int> postOrderUnRecu(TreeNode *head){
+    std::vector<int> res;
+    if(head == nullptr) {
+      return res;
+    }
+
+    std::stack<TreeNode *> s1;
+    std::stack<TreeNode *> s2;
+
+    s1.push(head);
+
+    while(s1.size()) {
+      TreeNode *root = s1.top();
+      s1.pop();
+      s2.push(root);
+      if(root->left) {
+        s1.push(root->left);
+      }
+
+      if(root->right){
+        s1.push(root->right);
+      }
+    }
+
+    while(s2.size()) {
+      res.push_back(s2.top()->val);
+      s2.pop();
+    }
+
+    return res;
+  }
 };
